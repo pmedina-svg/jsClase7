@@ -1,0 +1,14 @@
+const viajesEspaciales = [
+    { destino: "Luna", url: "./assets/luna.webp", distancia: 384400, velocidad: 40000, categoria: "Satelite", mensaje: "No saltes tanto, porque en la Luna pesas 6 veces menos que en la Tierra." },
+    { destino: "Marte", url: "./assets/marte.webp", distancia: 225000000, velocidad: 60000, categoria: "Planeta", mensaje: "¿Sabías que en Marte un día dura casi lo mismo que en la Tierra? Exactamente 24 horas y 39 minutos." },
+    { destino: "Venus", url: "./assets/venus.webp", distancia: 41000000, velocidad: 40000, categoria: "Planeta", mensaje: "Bienvenido a Venus, ponte bloqueador porque es el planeta más caliente del Sistema Solar." },
+    { destino: "Jupiter", url: "./assets/jupiter.webp", distancia: 628000000, velocidad: 50000, categoria: "Planeta", mensaje: "Júpiter es tan grande que cabrían más de mil Tierras dentro de él." },
+    { destino: "Saturno", url: "./assets/saturno.webp", distancia: 1280000000, velocidad: 80000, categoria: "Planeta", mensaje: "Saturno es famoso por sus impresionantes anillos formados principalmente por hielo y roca." },
+    { destino: "Europa", url: "./assets/europa.webp", distancia: 628000000, velocidad: 80000, categoria: "Satelite", mensaje: "Europa es una de las lunas de Júpiter y los científicos creen que podría tener un océano bajo su superficie, llevaste caña de pescar?" },
+    { destino: "Titan", url: "./assets/titan.webp", distancia: 1280000000, velocidad: 80000, categoria: "Satelite", mensaje: "Titán tiene una atmósfera muy densa y lagos de metano líquido en su superficie, no te tires al agua."},
+    { destino: "Pluton", url: "./assets/pluton.webp", distancia: 5900000000, velocidad: 100000, categoria: "Planeta Enano", mensaje: "Plutón fue considerado un planeta hasta 2006, cuando pasó a ser clasificado como planeta enano o como Satélite, ya no recuerdo bien." },
+    { destino: "Sol", url: "./assets/sol.webp", distancia: 149600000, velocidad: 120000, categoria: "Estrella", mensaje: "¡Cuidado! no debiste ir a allí, te confiaste demasiado" },
+    { destino: "Ganimedes", url: "./assets/ganimedes.webp", distancia: 628000000, velocidad: 80000, categoria: "Satelite", mensaje: "¿Sabías que Ganimedes es la luna más grande del Sistema Solar? Incluso es más grande que Mercurio." },
+    { destino: "Ceres", url: "./assets/ceres.webp", distancia: 414000000, velocidad: 50000, categoria: "Planeta Enano", mensaje: "Cuidado con aterrizar! Ceres tiene una montaña de unos 4.000 metros de altura y está cubierto de cráteres." },
+    { destino: "Eris", url: "./assets/eris.webp", distancia: 10100000000, velocidad: 100000, categoria: "Planeta Enano", mensaje: "Eris está tan lejos del Sol que su temperatura puede bajar hasta unos -230 °C. Espero que hayas llevado un buen abrigo." },
+]
