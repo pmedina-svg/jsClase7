@@ -88,7 +88,7 @@ function mostrarDestinos(destinos){
             controles.innerHTML = `<p>Velocidad de la nave (km/h)</p>
                                     <input type="number" value="${viaje.velocidad}">
                                     <div class="opcionesBotones">
-                                    <button>Lanzar misión</button>
+                                    <button>🚀 Lanzar misión</button>
                                     </div>`
 
             const inputVelocidad = controles.querySelector("input");
