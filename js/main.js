@@ -117,7 +117,7 @@ function mostrarDestinos(destinos){
                                                 </tr>` +contadorMisiones.innerHTML;
 
                 modalMision.innerHTML = `<div class="modal">
-                            <img src="./assets/lanzamiento.gif" alt="lanzamiento" >
+                            <img src="./assets/lanzamiento.gif" alt="lanzamiento ${nuevaMision.destino}" >
                             <h3>misión lanzada con éxito</h3>
                             <ul>
                                 <li>Destino: ${nuevaMision.destino}</li>
