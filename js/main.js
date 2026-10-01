@@ -103,17 +103,17 @@ function mostrarDestinos(destinos){
                     destino: viaje.destino,
                     velocidad: viaje.velocidad,
                     distancia: viaje.distancia,
-                    duracion: duracionConvertido
+                    duracion: convertirDuracion (viaje.distancia / viaje.velocidad)
                 }
 
                 misionesLanzadas.push(nuevaMision);
 
-                contadorMisiones.innerHTML += `<tr>
+                contadorMisiones.innerHTML = `<tr>
                                                 <td>${nuevaMision.destino}</td>
                                                 <td>${nuevaMision.velocidad}</td>
                                                 <td>${nuevaMision.distancia}</td>
                                                 <td>${nuevaMision.duracion}</td>
-                                                </tr>`
+                                                </tr>` +contadorMisiones.innerHTML;
 
 
             });
