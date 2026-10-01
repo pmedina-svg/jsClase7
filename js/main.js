@@ -252,6 +252,8 @@ const viajesEspaciales = [
 // }while (mision !== 5);
 
 const contenedorDestinos = document.querySelector("#listaDestinos");
+const configuracion = document.querySelector(".configuracionDestino");
+
 function mostrarDestinos(){
     contenedorDestinos.innerHTML = "";
 
@@ -265,8 +267,26 @@ function mostrarDestinos(){
         <button>Seleccionar</button>
         `;
 
+        let boton = contenedor.querySelector("button");
+
+        boton.addEventListener("click", function(){
+            configuracion.innerHTML = `<h4>Destino Seleccionado: ${viaje.destino}</h4>
+            <div class="info-destino">
+                <div class="col-destino">
+                <img src="${viaje.url}" alt="${viaje.destino}">
+                </div>
+                <div class="col-destino">
+                    <h3>${viaje.destino}</h3>
+                    <p>${viaje.categoria}</p>
+                    <p>Distancia desde la tierra: ${viaje.distancia} km</p>
+                    <p>Velocidad actual: ${viaje.velocidad} km/h</p>
+                </div>
+            </div>`
+        });
+
         contenedorDestinos.appendChild(contenedor);
     });
 }
 
 mostrarDestinos();
+

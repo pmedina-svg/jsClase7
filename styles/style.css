@@ -132,14 +132,14 @@ main h3:after {
       padding: 10px;
 }
 
-#listaDestinos h3 {
+#listaDestinos h3, #configuracion .col-destino h3 {
     text-transform: capitalize;
     border-bottom: none;
     font-weight: bolder;
     letter-spacing: 0;
 }
 
-#listaDestinos h3:after{
+#listaDestinos h3:after, #configuracion .col-destino h3:after{
     display: none;
 }
 
@@ -172,4 +172,38 @@ main h3:after {
     border-radius: 5px;
     margin: 10px 0;
     font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.configuracionDestino {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='14' ry='14' stroke='%23224159FF' stroke-width='2' stroke-dasharray='6%2c 6' stroke-dashoffset='56' stroke-linecap='butt'/%3e%3c/svg%3e");
+    border-radius: 14px;
+    margin: 10px 0;
+    text-align: center;
+    padding: 20px;
+}
+
+.configuracionDestino h4 {
+    font-family: "Space Grotesk", sans-serif;
+    text-transform: capitalize;
+}
+
+.configuracionDestino p {
+    font-size: 1.2rem;
+    color: #899ec8;
+}
+
+.configuracionDestino .info-destino {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.configuracionDestino .info-destino .col-destino img {
+    max-width: 100px;
+}
+
+.configuracionDestino .col-destino {
+    text-align: left;
 }
