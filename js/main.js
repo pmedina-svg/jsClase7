@@ -250,14 +250,36 @@ const viajesEspaciales = [
 //     };
 
 // }while (mision !== 5);
-
+const contenedorCategorias = document.querySelector("#listaCategorias");
 const contenedorDestinos = document.querySelector("#listaDestinos");
 const configuracion = document.querySelector(".configuracionDestino");
 
-function mostrarDestinos(){
+contenedorCategorias.innerHTML= `<button class="activo">Planeta</button>
+                                <button>Planeta Enano</button>
+                                <button>Satelite</button>
+                                <button>Estrella</button>`;
+
+const botonesCategorias = contenedorCategorias.querySelectorAll("button");
+
+botonesCategorias.forEach(boton =>{
+    boton.addEventListener("click", function(){
+
+        botonesCategorias.forEach(boton => boton.classList.remove("activo"));
+        boton.classList.add("activo");
+
+
+        const categoriaSeleccionada = boton.textContent.toLowerCase();
+        const destinosFiltrados = viajesEspaciales.filter(viaje => viaje.categoria.toLowerCase() === categoriaSeleccionada);
+
+        mostrarDestinos(destinosFiltrados);
+    });
+});
+
+
+function mostrarDestinos(destinos){
     contenedorDestinos.innerHTML = "";
 
-    viajesEspaciales.forEach(viaje => {
+    destinos.forEach(viaje => {
         let contenedor = document.createElement("div");
         contenedor.className = "card";
         contenedor.innerHTML += `<img src="${viaje.url}" alt="${viaje.destino}">
@@ -281,12 +303,12 @@ function mostrarDestinos(){
                     <p>Distancia desde la tierra: ${viaje.distancia} km</p>
                     <p>Velocidad actual: ${viaje.velocidad} km/h</p>
                 </div>
-            </div>`
+            </div>`;
         });
 
         contenedorDestinos.appendChild(contenedor);
     });
 }
 
-mostrarDestinos();
+mostrarDestinos(viajesEspaciales.filter(viaje => viaje.categoria === "Planeta"));
 

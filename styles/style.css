@@ -122,6 +122,36 @@ main h3:after {
     bottom: 0;
 }
 
+/* Sección Categoría */
+
+#listaCategorias {
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+#listaCategorias button {
+    background: #091a29;
+    border: 1px solid #224159;
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px;
+    max-width: 25%;
+    width: 100%;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#listaCategorias button.activo {
+    background: #003474;
+    border: 1px solid #0383dd;
+}
+
+#listaCategorias button:hover {
+    background: #003474;
+    border: 1px solid #0383dd;
+}
+
 /* Secciones Destinos */
 
 #listaDestinos {
@@ -174,6 +204,8 @@ main h3:after {
     font-size: 1.2rem;
     cursor: pointer;
 }
+
+/* Sección configuración */
 
 .configuracionDestino {
     background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='14' ry='14' stroke='%23224159FF' stroke-width='2' stroke-dasharray='6%2c 6' stroke-dashoffset='56' stroke-linecap='butt'/%3e%3c/svg%3e");
