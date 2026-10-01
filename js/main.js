@@ -32,6 +32,7 @@ const contenedorDestinos = document.querySelector("#listaDestinos");
 const configuracion = document.querySelector(".configuracionDestino");
 const controles = document.querySelector(".controlVelocidad");
 const contadorMisiones = document.querySelector("tbody");
+const modalMision = document.querySelector(".modalMision");
 
 contenedorCategorias.innerHTML= `<button class="activo">Planeta</button>
                                 <button>Planeta Enano</button>
@@ -97,7 +98,7 @@ function mostrarDestinos(destinos){
             const inputVelocidad = controles.querySelector("input");
             const botonLanzar = controles.querySelector("button");
 
-            botonLanzar.addEventListener("click", function(){
+            botonLanzar.addEventListener("click", function(){               
 
                 const nuevaMision = {
                     destino: viaje.destino,
@@ -115,6 +116,24 @@ function mostrarDestinos(destinos){
                                                 <td>${nuevaMision.duracion}</td>
                                                 </tr>` +contadorMisiones.innerHTML;
 
+                modalMision.innerHTML = `<div class="modal">
+                            <img src="./assets/lanzamiento.gif" alt="lanzamiento" >
+                            <h3>misión lanzada con éxito</h3>
+                            <ul>
+                                <li>Destino: ${nuevaMision.destino}</li>
+                                <li>Velocidad: ${nuevaMision.velocidad} </li>
+                                <li>Tiempo de viaje: ${nuevaMision.duracion}</li>
+                            </ul>
+                            <p><strong>Torre de control dice:</strong> "${viaje.mensaje}"</p>
+                            <button>Volver al centro de control</button>
+                        </div>`;
+                modalMision.style.display = "flex";
+
+                const btnVolver = modalMision.querySelector("button");
+
+                btnVolver.addEventListener("click", function(){
+                    modalMision.style.display = "none";
+                });
 
             });
 
