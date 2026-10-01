@@ -12,11 +12,16 @@
 html{
     font-size: 62.5%;
 }
-body{
+
+body {
     background-color: #010e19;
     color: #fff;
     font-family: "Google Sans", sans-serif;
     font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
 }
 
 .contenedor {
@@ -211,7 +216,6 @@ main h3:after {
     background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='14' ry='14' stroke='%23224159FF' stroke-width='2' stroke-dasharray='6%2c 6' stroke-dashoffset='56' stroke-linecap='butt'/%3e%3c/svg%3e");
     border-radius: 14px;
     margin: 10px 0;
-    text-align: center;
     padding: 20px;
 }
 
@@ -238,4 +242,57 @@ main h3:after {
 
 .configuracionDestino .col-destino {
     text-align: left;
+}
+
+.controlVelocidad {
+    padding: 10px 0;
+}
+
+.controlVelocidad p {
+    font-size: 1.3rem;
+    line-height: 2.1rem;
+    margin-bottom: 5px;
+}
+
+.controlVelocidad input {
+    background: #091a29;
+    border: 1px solid #224159;
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Quita las flechas en Chrome, Safari, Edge y Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Quita las flechas en Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+.opcionesBotones {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.opcionesBotones button {
+    background: #283c51;
+    width: 50%;
+    color: #889fbd;
+    border: 0;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.opcionesBotones button:hover {
+    background: #0b335b;
+    color: #fff;
 }

@@ -17,15 +17,15 @@ const viajesEspaciales = [
 // console.log(viajesEspaciales);
 
 // // funcion para convertir el calculo de horas a años - dias - horas
-// function convertirDuracion(horasTotales){
-//     const horasAnio = 365 * 24;
-//     const anios = parseInt(horasTotales / horasAnio);
-//     const horasRestantes = horasTotales % horasAnio;
-//     const dias = parseInt(horasRestantes / 24);
-//     const horas = horasRestantes % 24;
+function convertirDuracion(horasTotales){
+    const horasAnio = 365 * 24;
+    const anios = parseInt(horasTotales / horasAnio);
+    const horasRestantes = horasTotales % horasAnio;
+    const dias = parseInt(horasRestantes / 24);
+    const horas = horasRestantes % 24;
     
-//     return anios + " años, " + dias + " días y " + horas + " horas";
-// }
+    return anios + " años, " + dias + " días y " + horas + " horas";
+}
 
 // let mision;
 
@@ -253,6 +253,7 @@ const viajesEspaciales = [
 const contenedorCategorias = document.querySelector("#listaCategorias");
 const contenedorDestinos = document.querySelector("#listaDestinos");
 const configuracion = document.querySelector(".configuracionDestino");
+const controles = document.querySelector(".controlVelocidad");
 
 contenedorCategorias.innerHTML= `<button class="activo">Planeta</button>
                                 <button>Planeta Enano</button>
@@ -292,6 +293,9 @@ function mostrarDestinos(destinos){
         let boton = contenedor.querySelector("button");
 
         boton.addEventListener("click", function(){
+
+            const duracionConvertido = convertirDuracion(viaje.distancia / viaje.velocidad);
+            
             configuracion.innerHTML = `<h4>Destino Seleccionado: ${viaje.destino}</h4>
             <div class="info-destino">
                 <div class="col-destino">
@@ -301,9 +305,32 @@ function mostrarDestinos(destinos){
                     <h3>${viaje.destino}</h3>
                     <p>${viaje.categoria}</p>
                     <p>Distancia desde la tierra: ${viaje.distancia} km</p>
-                    <p>Velocidad actual: ${viaje.velocidad} km/h</p>
+                    <p>Velocidad actual: <span class="velocidad">${viaje.velocidad}</span> km/h</p>
+                    <p>Duración del viaje: <span class="duracion">${duracionConvertido}</span></p>
                 </div>
             </div>`;
+
+            controles.innerHTML = `<p>Velocidad de la nave (km/h)</p>
+                                    <input type="number" value="${viaje.velocidad}">
+                                    <div class="opcionesBotones">
+                                    <button>Calcular duración</button>
+                                    <button>Lanzar misión</button>
+                                    </div>`
+
+            const inputVelocidad = controles.querySelector("input");
+            const botonCalcular = controles.querySelector("button");
+
+            botonCalcular.addEventListener("click", function(){
+
+                viaje.velocidad = parseInt(inputVelocidad.value);
+
+                const duracion = configuracion.querySelector(".duracion");
+                const velocidad = configuracion.querySelector(".velocidad");
+
+                duracion.textContent = convertirDuracion(viaje.distancia / viaje.velocidad);
+                velocidad.textContent = viaje.velocidad;
+            });
+
         });
 
         contenedorDestinos.appendChild(contenedor);
