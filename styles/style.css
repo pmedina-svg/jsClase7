@@ -277,14 +277,12 @@ input[type="number"] {
 
 
 .opcionesBotones {
-    display: flex;
-    gap: 10px;
     margin: 10px 0;
 }
 
 .opcionesBotones button {
     background: #283c51;
-    width: 50%;
+    width: 100%;
     color: #889fbd;
     border: 0;
     padding: 15px;

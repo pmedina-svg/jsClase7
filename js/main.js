@@ -14,8 +14,6 @@ const viajesEspaciales = [
 ]
 
 
-// console.log(viajesEspaciales);
-
 // // funcion para convertir el calculo de horas a años - dias - horas
 function convertirDuracion(horasTotales){
     const horasAnio = 365 * 24;
@@ -27,229 +25,6 @@ function convertirDuracion(horasTotales){
     return anios + " años, " + dias + " días y " + horas + " horas";
 }
 
-// let mision;
-
-// function regresarTierra(){
-    
-//     let regresar;
-    
-//     do{
-//         regresar = prompt("¿Quieres volver a la Tierra?\n\n1. Si\n2. No").toLowerCase();
-//         console.log("Regresar: " + regresar);
-//         if(regresar === "1" || regresar === "si"){
-//             alert("Astronauta " + nombreAstronauta + " regresando al planeta Tierra..");
-//             console.log("Astronauta " + nombreAstronauta + " decidió volver a la Tierra.");
-//         }
-//         else if(regresar === "2" || regresar === "no"){
-//             alert("Gracias por haber participado en la misión. \nTe deseamos una vida prospera en tu nuevo hogar.");
-//             console.log("Astronauta " + nombreAstronauta + " decidió quedarse en el espacio.");
-//             mision = 5;
-//         }
-//         else{
-//             alert("Respuesta incorrecta");
-//         }
-    
-//     }while(regresar !== "1" && regresar !== "2" && regresar !== "si" && regresar !== "no");
-// }
-
-// function ejecutarMision(viajeSeleccionado){
-// let accion;
-// do{
-
-//     accion = parseInt(prompt("Has seleccionado: " + viajeSeleccionado.destino + "\nDistancia: " + viajeSeleccionado.distancia + " km" + "\nVelocidad de viaje: " + viajeSeleccionado.velocidad + "\n\n Qué quieres hacer?" + "\n1. Lanzar misión" + "\n2. Cambiar velocidad" + "\n3. Calcular duración de viaje" + "\n4. Cancelar misión"  ));
-
-//     switch(accion){
-
-//         case 1:{
-//             const duracionViaje = viajeSeleccionado.distancia / viajeSeleccionado.velocidad;
-//             console.log("Se procede el despegue a: " + viajeSeleccionado.destino);
-//             alert("🚀 Misión completada! \nHas llegado a " + viajeSeleccionado.destino + "\nDuración del viaje: " + convertirDuracion(duracionViaje) + ".\nNuestros amigos te dan la bienvenida 👽\n\n" + viajeSeleccionado.mensaje);
-//             regresarTierra();
-//             break;
-//             }
-
-//             case 2:{
-//                 let nuevaVelocidad;
-
-//                 do{
-//                     nuevaVelocidad = parseInt(prompt("🚀 A que velocidad quieres viajar ?"));
-//                     if(isNaN(nuevaVelocidad)){
-//                         alert("Debes ingresar solo números");
-//                     }
-
-//                 }while(isNaN(nuevaVelocidad));
-
-//                 viajeSeleccionado.velocidad = nuevaVelocidad;
-//                 console.log("🚀 Nueva velocidad configurada: " + viajeSeleccionado.velocidad + " km/h");
-//                 console.log(viajeSeleccionado);
-//                 break;
-//             }
-
-//             case 3:{
-//                 const duracionViaje = viajeSeleccionado.distancia / viajeSeleccionado.velocidad;
-//                 alert("La duración del viaje al destino: " + viajeSeleccionado.destino + " tiene una duración de " + convertirDuracion(duracionViaje) + ".");
-//                 console.log("Duración del viaje: " + convertirDuracion(duracionViaje) + ".");
-//                 break;
-//             }
-
-//             case 4:
-//                 alert("No te preocupes, no todos están listos para volar.");
-//                 console.log("No viaja.");
-//                 break;
-
-//             default:
-//                 alert("Opción no válida");
-//                 console.log(nombreAstronauta + " escribio: " + accion + ". opción no valida.");
-//                 break;
-//             }
-
-//     }while(accion !==1 && accion !==4);
-// }
-
-// do{
-//     mision = parseInt(prompt("🚀 NASA - Centro de control \n\n¿Que quieres hacer? \n1. Elegir destino por categoría \n2. Buscar un destino \n3. Ver todos los destinos \n4. Viajar por todo el espacio \n\n5. Salir"));
-
-//     console.log("Selecionó: " + mision)
-
-//     switch (mision){
-//         case 1:
-//             let eligeCategoria;
-//             let existeCategoria;
-//             let volverDestino = false;
-//             let viajeSeleccionado;
-
-//             do{
-//                 eligeCategoria = prompt("¿Que categoría quieres explorar? \n- Planeta \n- Satelite \n- Planeta Enano \n- Estrella \n\n- Volver").toLowerCase();
-//                 console.log("Eligio categoría: " + eligeCategoria);
-//                 if(eligeCategoria === "volver"){
-//                     break;
-//                 }
-//                 volverDestino = false;
-
-//                 existeCategoria = viajesEspaciales.some(viaje => viaje.categoria.toLowerCase() === eligeCategoria);
-
-//                 if(existeCategoria){
-//                     const destinosFiltrados = viajesEspaciales.filter(viaje => viaje.categoria.toLowerCase() === eligeCategoria);
-//                     const nombreDestinos = destinosFiltrados.map(viaje => viaje.destino);                                       
-
-//                     do{
-
-//                         const eligeDestino = prompt("Donde quieres viajar? \n\n" + nombreDestinos.join("\n") + "\n\n- Volver").toLowerCase();
-//                         console.log("Eligio destino: " + eligeDestino);
-
-//                         if(eligeDestino === "volver"){
-//                             volverDestino = true;
-//                         }
-
-//                         else {
-//                             viajeSeleccionado = destinosFiltrados.find(viaje => viaje.destino.toLowerCase() === eligeDestino);        
-//                             console.log(viajeSeleccionado); 
-//                             if(!viajeSeleccionado){
-//                                 alert("Destino invalido");
-//                             }
-//                         }
-
-//                     }while(!viajeSeleccionado && !volverDestino);
-                
-//                 }
-                    
-//                 else{
-//                     alert("Destino no encontrado");
-//                 }
-//             }while(!existeCategoria || volverDestino);
-
-//             if(viajeSeleccionado){
-//                 ejecutarMision(viajeSeleccionado);
-//             }
-
-//             break;
-
-//         case 2:
-//             let eligeDestino;
-//             let destinoFiltrado;
-
-//             do{
-//                 eligeDestino = prompt("¿Qué destino quieres buscar? \nEscribe 'volver' si quieres regresar al menú").toLowerCase();
-    
-//                 if(eligeDestino === "volver"){
-//                     break;
-//                 }
-
-//                 destinoFiltrado = viajesEspaciales.find(viaje => viaje.destino.toLowerCase() === eligeDestino);
-    
-//                 if(destinoFiltrado){
-//                     console.log(destinoFiltrado);
-//                     ejecutarMision(destinoFiltrado);
-//                 }
-//                 else{
-//                     console.log( eligeDestino + " destino no encontrado");
-//                     alert("Destino no encontrado");
-//                 }
-
-//             }while(!destinoFiltrado);      
-
-//             break;
-
-//         case 3:
-//             const nombreDestinos = viajesEspaciales.map(viaje => viaje.destino);
-//             console.log("Destino: " + nombreDestinos);
-//             alert("Destinos disponibles: \n" + "- " + nombreDestinos.join("\n- "));
-//             break;
-
-//         case 4:
-//             const totalDistancia = viajesEspaciales.reduce((acc, viaje) => acc + viaje.distancia, 0);
-//             console.log("Distancia total: " + totalDistancia);
-//             alert("Distancia total del viaje espacial: " + totalDistancia + " km");
-//             let velocidadViaje;
-
-//             do{
-//                 velocidadViaje = parseInt(prompt("🚀 A que velocidad quieres viajar ?"));
-//                 if(isNaN(velocidadViaje)){
-//                     alert("Debes ingresar solo números");
-//                 }
-
-//             }while(isNaN(velocidadViaje));
-
-//             const duracionViaje = totalDistancia / velocidadViaje;
-//             alert("El viaje espacial tiene una duración de: " + convertirDuracion(duracionViaje));
-
-//             let iniciarViaje;
-
-//             do{
-
-//                 iniciarViaje = prompt("Quieres iniciar el viaje por todo el espacio? \n\n1. Si \n2. No").toLowerCase();
-    
-//                 if(iniciarViaje === "si" || iniciarViaje === "1"){
-    
-//                     alert("🚀 ¡Misión iniciada!\n\nHas comenzado tu viaje por todo el espacio.\nDuración estimada: " + convertirDuracion(duracionViaje));
-
-
-//                     regresarTierra();
-
-    
-//                 }
-//                 else if(iniciarViaje === "no" || iniciarViaje === "2"){
-//                     alert("No te preocupes, no todos están listos para volar.");
-//                 }
-//                 else{
-//                     alert("Respuesta incorrecta");
-//                 }
-
-//             }while(iniciarViaje !=="si" && iniciarViaje !== "no" && iniciarViaje !== "1" && iniciarViaje !== "2");
-
-//             break;
-
-//         case 5:
-//             break;
-
-//         default:
-//             alert("Opción no válida");
-//             console.log(nombreAstronauta + " escribio: " + mision + ". opción no valida.");
-//             break;
-
-//     };
-
-// }while (mision !== 5);
 const contenedorCategorias = document.querySelector("#listaCategorias");
 const contenedorDestinos = document.querySelector("#listaDestinos");
 const configuracion = document.querySelector(".configuracionDestino");
@@ -295,7 +70,7 @@ function mostrarDestinos(destinos){
         boton.addEventListener("click", function(){
 
             const duracionConvertido = convertirDuracion(viaje.distancia / viaje.velocidad);
-            
+
             configuracion.innerHTML = `<h4>Destino Seleccionado: ${viaje.destino}</h4>
             <div class="info-destino">
                 <div class="col-destino">
@@ -313,14 +88,12 @@ function mostrarDestinos(destinos){
             controles.innerHTML = `<p>Velocidad de la nave (km/h)</p>
                                     <input type="number" value="${viaje.velocidad}">
                                     <div class="opcionesBotones">
-                                    <button>Calcular duración</button>
                                     <button>Lanzar misión</button>
                                     </div>`
 
             const inputVelocidad = controles.querySelector("input");
-            const botonCalcular = controles.querySelector("button");
 
-            botonCalcular.addEventListener("click", function(){
+            inputVelocidad.addEventListener("keyup", function(){
 
                 viaje.velocidad = parseInt(inputVelocidad.value);
 
@@ -330,6 +103,7 @@ function mostrarDestinos(destinos){
                 duracion.textContent = convertirDuracion(viaje.distancia / viaje.velocidad);
                 velocidad.textContent = viaje.velocidad;
             });
+            
 
         });
 
