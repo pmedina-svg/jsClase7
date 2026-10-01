@@ -11,7 +11,9 @@ const viajesEspaciales = [
     { destino: "Ganimedes", url: "./assets/ganimedes.webp", distancia: 628000000, velocidad: 80000, categoria: "Satelite", mensaje: "¿Sabías que Ganimedes es la luna más grande del Sistema Solar? Incluso es más grande que Mercurio." },
     { destino: "Ceres", url: "./assets/ceres.webp", distancia: 414000000, velocidad: 50000, categoria: "Planeta Enano", mensaje: "Cuidado con aterrizar! Ceres tiene una montaña de unos 4.000 metros de altura y está cubierto de cráteres." },
     { destino: "Eris", url: "./assets/eris.webp", distancia: 10100000000, velocidad: 100000, categoria: "Planeta Enano", mensaje: "Eris está tan lejos del Sol que su temperatura puede bajar hasta unos -230 °C. Espero que hayas llevado un buen abrigo." },
-]
+];
+
+const misionesLanzadas = [];
 
 
 // // funcion para convertir el calculo de horas a años - dias - horas
@@ -20,7 +22,7 @@ function convertirDuracion(horasTotales){
     const anios = parseInt(horasTotales / horasAnio);
     const horasRestantes = horasTotales % horasAnio;
     const dias = parseInt(horasRestantes / 24);
-    const horas = horasRestantes % 24;
+    const horas = parseInt(horasRestantes % 24);
     
     return anios + " años, " + dias + " días y " + horas + " horas";
 }
@@ -29,6 +31,7 @@ const contenedorCategorias = document.querySelector("#listaCategorias");
 const contenedorDestinos = document.querySelector("#listaDestinos");
 const configuracion = document.querySelector(".configuracionDestino");
 const controles = document.querySelector(".controlVelocidad");
+const contadorMisiones = document.querySelector("tbody");
 
 contenedorCategorias.innerHTML= `<button class="activo">Planeta</button>
                                 <button>Planeta Enano</button>
@@ -92,6 +95,28 @@ function mostrarDestinos(destinos){
                                     </div>`
 
             const inputVelocidad = controles.querySelector("input");
+            const botonLanzar = controles.querySelector("button");
+
+            botonLanzar.addEventListener("click", function(){
+
+                const nuevaMision = {
+                    destino: viaje.destino,
+                    velocidad: viaje.velocidad,
+                    distancia: viaje.distancia,
+                    duracion: duracionConvertido
+                }
+
+                misionesLanzadas.push(nuevaMision);
+
+                contadorMisiones.innerHTML += `<tr>
+                                                <td>${nuevaMision.destino}</td>
+                                                <td>${nuevaMision.velocidad}</td>
+                                                <td>${nuevaMision.distancia}</td>
+                                                <td>${nuevaMision.duracion}</td>
+                                                </tr>`
+
+
+            });
 
             inputVelocidad.addEventListener("keyup", function(){
 
