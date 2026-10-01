@@ -121,3 +121,55 @@ main h3:after {
     background: #009efc;
     bottom: 0;
 }
+
+/* Secciones Destinos */
+
+#listaDestinos {
+      display: flex;       
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 10px;
+      padding: 10px;
+}
+
+#listaDestinos h3 {
+    text-transform: capitalize;
+    border-bottom: none;
+    font-weight: bolder;
+    letter-spacing: 0;
+}
+
+#listaDestinos h3:after{
+    display: none;
+}
+
+#destinos .card {
+    flex: 0 0 calc(25% - 8px);
+    text-align: center;
+    padding: 10px;
+    background: #091a29;
+    border: 1px solid #224159;
+    border-radius: 10px;
+}
+
+#destinos .card img {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+#destinos .card p {
+    font-size: 1.3rem;
+    line-height: 2.1rem;
+}
+
+#destinos button {
+    padding: 10px;
+    width: 100%;
+    background: #003474;
+    border: 1px solid #0383dd;
+    color: #ffffff;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 1.2rem;
+}

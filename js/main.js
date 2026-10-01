@@ -250,3 +250,23 @@ const viajesEspaciales = [
 //     };
 
 // }while (mision !== 5);
+
+const contenedorDestinos = document.querySelector("#listaDestinos");
+function mostrarDestinos(){
+    contenedorDestinos.innerHTML = "";
+
+    viajesEspaciales.forEach(viaje => {
+        let contenedor = document.createElement("div");
+        contenedor.className = "card";
+        contenedor.innerHTML += `<img src="${viaje.url}" alt="${viaje.destino}">
+        <h3>${viaje.destino}</h3>
+        <p>${viaje.categoria}</p>
+        <p><span>${viaje.distancia} km</span></p>
+        <button>Seleccionar</button>
+        `;
+
+        contenedorDestinos.appendChild(contenedor);
+    });
+}
+
+mostrarDestinos();
